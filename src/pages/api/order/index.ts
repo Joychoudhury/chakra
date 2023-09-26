@@ -61,7 +61,7 @@ export default async function handler(
       // Calculate the total order amount
       const totalAmount = cart.products.reduce(
         (total: number, product: Cart) => {
-          return total + product.productId.originalPrice * product.quantity;
+          return total + product.productId.offerPrice * product.quantity;
         },
         0
       );
