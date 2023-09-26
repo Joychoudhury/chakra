@@ -9,17 +9,17 @@ const AdminEditProduct = () => {
     const { id } = router.query;
 
     const [productData, setProductData] = useState({
-        title:'',
-        description:'',
-        offerPrice:0,
-        originalPrice:0,
-        category:'',
-        imageSrc:''
+        title: '',
+        description: '',
+        offerPrice: 0,
+        originalPrice: 0,
+        category: '',
+        imageSrc: ''
     });
 
     const fetchProduct = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/admin/product/${id}`);
+            const response = await axios.get(`https://joy-chakra-deploy.vercel.app/api/admin/product/${id}`);
             setProductData(response.data);
         } catch (error) {
             console.error('Error fetching product:', error);
@@ -32,14 +32,14 @@ const AdminEditProduct = () => {
         }
     }, [id]);
 
-    const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setProductData({ ...productData, [name]: value });
     };
 
     const handleEditProduct = async () => {
         try {
-            const response = await axios.put(`http://localhost:3000/api/admin/product/${id}`, productData);
+            const response = await axios.put(`https://joy-chakra-deploy.vercel.app/api/admin/product/${id}`, productData);
             console.log(response);
             router.push('/Admin');
         } catch (error) {
@@ -48,7 +48,7 @@ const AdminEditProduct = () => {
     };
 
     if (productData === null) {
-        return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
 
     return (

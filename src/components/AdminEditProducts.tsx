@@ -21,7 +21,7 @@ const AdminEditProducts = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/admin/product');
+            const response = await axios.get('https://joy-chakra-deploy.vercel.app/api/admin/product');
             setProducts(response.data as Product[]);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -30,7 +30,7 @@ const AdminEditProducts = () => {
 
     const handleDelete = async (id: string) => {
         try {
-            const response = await axios.delete('http://localhost:3000/api/admin/product/' + id);
+            const response = await axios.delete('https://joy-chakra-deploy.vercel.app/api/admin/product/' + id);
             console.log(response)
             // setProducts(response.data);
             fetchProducts();

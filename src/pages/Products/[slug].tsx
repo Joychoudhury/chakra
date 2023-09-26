@@ -28,7 +28,7 @@ const Slug = () => {
 
     const handleAddToCart = async (id: string) => {
         try {
-            const cartUri = 'http://localhost:3000/api/cart';
+            const cartUri = 'https://joy-chakra-deploy.vercel.app/api/cart';
             if (status !== 'authenticated' || session == null) {
                 setError({
                     type: 'danger',
@@ -61,7 +61,7 @@ const Slug = () => {
                     visibility: false,
                 });
             }, 2500);
-            
+
         } catch (err) {
             console.error('Error adding product to cart:', err);
             setError({
@@ -81,7 +81,7 @@ const Slug = () => {
 
     useEffect(() => {
         if (router.query.slug) {
-            axios.get(`http://localhost:3000/api/product/${router.query.slug}`).then((res) => {
+            axios.get(`https://joy-chakra-deploy.vercel.app/api/product/${router.query.slug}`).then((res) => {
                 setProduct(res.data);
             });
         }
@@ -92,7 +92,7 @@ const Slug = () => {
     }
 
     const discountPercentage = Math.floor((product.offerPrice * 0.2) / product.offerPrice * 100);
-    const {type,visibility,message} = error;
+    const { type, visibility, message } = error;
     return (
         <div className="">
             <Navbar />

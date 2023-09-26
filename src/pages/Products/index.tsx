@@ -8,7 +8,7 @@ import Alert from "../error/Alert";
 import ProductCard from "@/components/ProductCard";
 import Navbar from "@/components/Navbar";
 
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://joy-chakra-deploy.vercel.app/api";
 const PRODUCT_URI = `${API_BASE_URL}/product`;
 const CATEGORY_URI = `${API_BASE_URL}/categories/`;
 
@@ -102,7 +102,7 @@ const index = ({ product }: { product: product[] }) => {
         : categorySelected;
 
       setCategory(selectedCategory);
-      handleFetch('http://localhost:3000/api/categories/' + selectedCategory)
+      handleFetch('https://joy-chakra-deploy.vercel.app/api/categories/' + selectedCategory)
     }
 
   }, []);

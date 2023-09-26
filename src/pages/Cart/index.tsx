@@ -46,7 +46,7 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
-      const response = await axios.get<{ products: CartItem[] }>('http://localhost:3000/api/cart');
+      const response = await axios.get<{ products: CartItem[] }>('https://joy-chakra-deploy.vercel.app/api/cart');
       setProducts(response.data.products);
     } catch (error) {
       console.error(error);
@@ -58,14 +58,14 @@ const Cart = () => {
     try {
       if (value > 0) {
         const response = await axios.put<{ products: CartItem[] }>(
-          `http://localhost:3000/api/cart/${id}`,
+          `https://joy-chakra-deploy.vercel.app/api/cart/${id}`,
           { value }
         );
         setProducts(response.data.products);
       } else {
         // If the new quantity is 0 or less, delete the product
         const response = await axios.delete<{ products: CartItem[] }>(
-          `http://localhost:3000/api/cart/${id}`
+          `https://joy-chakra-deploy.vercel.app/api/cart/${id}`
         );
         setProducts(response.data.products);
       }
@@ -76,7 +76,7 @@ const Cart = () => {
 
   const deleteProduct = async (id: string) => {
     try {
-      const response = await axios.delete<{ products: CartItem[] }>(`http://localhost:3000/api/cart/${id}`);
+      const response = await axios.delete<{ products: CartItem[] }>(`https://joy-chakra-deploy.vercel.app/api/cart/${id}`);
       setProducts(response.data.products);
     } catch (error) {
       console.error(error);
