@@ -10,7 +10,7 @@ interface Order {
       _id: string;
       title: string;
       imageSrc: string;
-      price: number;
+      offerPrice: number;
     };
     quantity: number;
   }[];
@@ -71,7 +71,7 @@ const Order = () => {
                     </div>
                     <div className="text-right">
                       <p>Quantity: {product.quantity}</p>
-                      <p>Price: ₹{product.productId.price}</p>
+                      <p>Price: ₹{product.productId.offerPrice}</p>
                     </div>
                   </div>
                 ))}

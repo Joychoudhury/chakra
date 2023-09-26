@@ -8,7 +8,7 @@ interface Product {
   _id: string;
   title: string;
   imageSrc: string;
-  price: number;
+  offerPrice: number;
 }
 
 interface CartItem {
@@ -103,7 +103,7 @@ const Cart = () => {
 
   useEffect(() => {
     const cartSubtotal = products.reduce(
-      (total, product) => total + product.productId.price * product.quantity,
+      (total, product) => total + product.productId.offerPrice * product.quantity,
       0
     );
     setSubtotal(cartSubtotal);
@@ -159,7 +159,7 @@ const Cart = () => {
                         </span>
                       </div>
                       <div className="flex items-center space-x-4">
-                        <p className="text-sm">₹{e.productId.price}</p>
+                        <p className="text-sm">₹{e.productId.offerPrice}</p>
                         <svg
                           onClick={() => deleteProduct(e.productId._id)}
                           xmlns="http://www.w3.org/2000/svg"
