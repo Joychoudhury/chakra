@@ -19,7 +19,7 @@ const products = [
     title: ' Deity idol',
     description:
       "Crafted in South India style, beautiful Idols  beautiful looks , rich carving and brilliant shine. Signifying Deity's power of protecting his devotees and defeating the evil in a skillful playful manner, the Idol would enhance the protection energies in your abode.",
-    bg: 'blue',
+    bg: 'bg-blue-100',
     to: 'idol'
   },
   {
@@ -27,7 +27,7 @@ const products = [
     title: 'Yantra',
     description:
       "Yantras are believed to have occult powers based on Hindu astrology and tantric texts. They are also believed to be vital for eradicating planet-related negativity and obtaining divine benefits",
-    bg: 'red',
+    bg: 'bg-red-100',
     to: 'yantra'
   },
   {
@@ -35,7 +35,7 @@ const products = [
     title: 'Shivling',
     description:
       "Banalingams are found naturally in the Narmada River in Madhya Pradesh, India. They are considered auspicious because the marks on the stones are made naturally in the river bed.",
-    bg: 'purple',
+    bg: 'bg-purple-100',
     to: 'shivling'
   },
   {
@@ -43,7 +43,7 @@ const products = [
     title: 'Rudraksh',
     description:
       "Those who have the blessings of lord Shiva get the opportunity to wear it. The meaning of the word 'Rudraksha' is the eyes of Rudra (Shiva) and his tears (Aksha).",
-    bg: 'yellow',
+    bg: 'bg-yellow-100',
     to: 'rudraksh'
   },
   {
@@ -51,7 +51,7 @@ const products = [
     title: 'Shaligram',
     description:
       "Shaligram ji is a fossilized stone brought from Gandaki river in Nepal. This is a beautiful and very rare shaligram of Hayagriva ji.",
-    bg: 'green',
+    bg: 'bg-green-100',
     to: 'shaligram'
   },
   {
@@ -59,7 +59,7 @@ const products = [
     title: 'Quartz',
     description:
       "The Sphatik mala has excellent reputation for numerous healing and spiritual properties.",
-    bg: 'blue',
+    bg: 'bg-blue-100',
     to: 'quartz'
   },
 ];
@@ -74,7 +74,7 @@ export default function Home() {
       </div>
       {/* categories */}
       <section className="container mx-auto p-10 md:py-20 px-0 md:p-30 md:px-10">
-        <h1 className="font-bold text-6xl mt-15 mb-10 text-gray-800"> Categories → </h1>
+        <h1 className="p-3 font-bold text-6xl mt-15 mb-10 text-gray-800"> Categories → </h1>
         <section className="grid lg:grid-cols-3 2xl:grid-cols-4 grid-cols-1 gap-5 antialiased">
           {products.map((product, index) => (
             <CategoryCard
